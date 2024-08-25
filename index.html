@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calcular Juros Compostos</title>
+</head>
+<body>
+    <h1>Calculadora Juros Compostos</h1>
+    <input type="number" id="capital" placeholder="Insira o capital">
+    <input type="number" id="taxa" placeholder="Insira a taxa já em decimais">
+    <input type="number" id="tempo" placeholder="Insira o tempo">
+    <input type="number" id="um" placeholder="1" value="1">
+    
+    <button id="Calcular" onclick="calcular()">Calcular</button>
+
+    <p>O Montante é de: <span id="media"></span></p>
+    <p id="status"></p>
+
+    <script>
+        function calcular() {
+            var n1 = parseFloat(document.getElementById('capital').value);
+            var n2 = parseFloat(document.getElementById('taxa').value);
+            var n3 = parseFloat(document.getElementById('tempo').value);
+            var n4 = parseFloat(document.getElementById('um').value);
+
+            var Montante = n1 * Math.pow((n2 + n4), n3);
+
+            document.getElementById('media').innerHTML = Montante.toFixed(2);
+        }
+    </script>
+</body>
+</html>
